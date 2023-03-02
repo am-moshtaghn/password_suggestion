@@ -1,21 +1,16 @@
 import random
 import time
-
-
 def str_pas():
     for i in range(len(str_of_pas)):
         j = random.randint(1, len(str_of_pas))
         str_of_pas.append(str_of_pas[j-1])
         str_of_pas.remove(str_of_pas[j-1])
-
-
 def change_all():
     for i in range(len(all_characters)):
         j = random.randint(1, len(all_characters))
         all_characters.append(all_characters[j-1])
         all_characters.remove(all_characters[j-1])
-
-
+print("wellcome to password suggestion version 1.0.0\nin this program you inter your password and this program check your password for some object for example especial charcter and etc.\nand next suggest a new password")
 pas = input("Enter your password: ")
 str_of_pas = [i for i in pas]
 capital_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
@@ -86,3 +81,4 @@ if count >= 0:
     time.sleep(5)
     for i in range(len(str_of_pas)):
         print(str_of_pas[i], end="")
+print("\n----------------------------------------------")
