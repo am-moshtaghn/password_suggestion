@@ -38,6 +38,7 @@ out = input(
 )
 if out == "s":
     pas = input("Enter your own password: ")
+    str_of_pas_own = [i for i in pas]
     str_of_pas = [i for i in pas]
     print("--------------------log--------------------")
     capital_of_pas = [i for i in pas if i in capital_letters]
@@ -76,16 +77,15 @@ if out == "s":
         str_pas()
     else:
         print("Your password has number!")
-    if len(str_of_pas) < 5:
-        if len(capital_of_pas) or len(special_of_pas) or len(numbers_of_pas) or len(small_of_pas) == 0:
-            print("In your password number of characters are lower than 8!")
-            change_all()
-            time.sleep(3)
-            n = int(input("How many characters you like should the password be?"))
-            n = n - len(str_of_pas)
-            for i in range(n):
-                j = random.randint(1, len(all_characters))
-                str_of_pas.append(all_characters[j])
+    if len(str_of_pas_own) < 5:
+        print("In your password number of characters are lower than 5!")
+        change_all()
+        time.sleep(3)
+        n = int(input("How many characters you like should the password be? "))
+        n = n - len(str_of_pas)
+        for i in range(n):
+            j = random.randint(1, len(all_characters))
+            str_of_pas.append(all_characters[j])
             str_pas()
     else:
         print("Has a minimum number of characters!")
